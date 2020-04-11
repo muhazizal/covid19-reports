@@ -1,5 +1,6 @@
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/style.css';
+import main from './scripts/view/main.js'
 
-const btn = $('.btn');
-console.log(btn);
+document.addEventListener('DOMContentLoaded', main);
