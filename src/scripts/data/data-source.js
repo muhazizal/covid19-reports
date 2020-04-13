@@ -8,7 +8,7 @@ class DataSource {
         if (responseJson) {
           return Promise.resolve(responseJson[0]);
         }
-        return Promise.reject(`${keyword} not found, try again!`);s
+        return Promise.reject(`${keyword} not found, try again!`);
       })
   }
 }

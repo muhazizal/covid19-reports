@@ -25,17 +25,7 @@ class CountryList extends HTMLElement {
       <style>
         ${bootstrap}
       </style>
-
-      <thead>
-        <tr>
-          <th scope="col">Country</th>
-          <th scope="col">Confirmed</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Deaths</th>
-        </tr>
-      </thead>
     `
-    
     const countryItemElement = document.createElement('country-item');
     countryItemElement.country = this._countries;
     this.shadowDOM.appendChild(countryItemElement);

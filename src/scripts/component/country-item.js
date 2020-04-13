@@ -17,14 +17,22 @@ class CountryItem extends HTMLElement {
         ${bootstrap}
       </style>
 
-      <tbody>
-        <tr>
-          <td>${this._country.countryRegion}</td>
-          <td>${this._country.confirmed}</td>
-          <td>${this._country.recovered}</td>
-          <td>${this._country.deaths}</td>
-        </tr>
-      </tbody>
+      <section class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">${this._country.countryRegion}</div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush text-left">
+                  <li class="list-group-item">Positif     : ${this._country.confirmed}</li>
+                  <li class="list-group-item">Recovered   : ${this._country.recovered}</li>
+                  <li class="list-group-item">Deaths      : ${this._country.deaths}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     `
   }
 }
