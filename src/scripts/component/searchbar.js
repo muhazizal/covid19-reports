@@ -41,7 +41,7 @@ class Searchbar extends HTMLElement {
       <div class="container">
         <form class="form-inline my-5">
           <input class="form-control mr-sm-2" type="search" id="searchElement" placeholder="Search your country" aria-label="Search">
-          <button class="btn btn-outline-primary my-sm-0" id="searchBtnElement" type="submit" href="#">Search</button>
+          <button class="btn btn-outline-primary my-sm-0" id="searchBtnElement" type="button">Search</button>
         </form>
       </div>
     `

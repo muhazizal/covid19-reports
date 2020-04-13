@@ -6,9 +6,9 @@ class DataSource {
       })
       .then(responseJson => {
         if (responseJson) {
-          return Promise.resolve(responseJson[1]);
+          return Promise.resolve(responseJson[0]);
         }
-        return Promise.reject(`${keyword} not found, try again!`);        
+        return Promise.reject(`${keyword} not found, try again!`);s
       })
   }
 }

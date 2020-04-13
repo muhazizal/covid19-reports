@@ -35,11 +35,10 @@ class CountryList extends HTMLElement {
         </tr>
       </thead>
     `
-    this._countries.forEach((country) => {
-      const countryItemElement = document.createElement('country-item');
-      countryItemElement.country = country;
-      this.shadowDOM.appendChild(countryItemElement);
-    })
+    
+    const countryItemElement = document.createElement('country-item');
+    countryItemElement.country = this._countries;
+    this.shadowDOM.appendChild(countryItemElement);
   }
 }
 
