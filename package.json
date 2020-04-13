@@ -2,7 +2,7 @@
   "name": "covid-19_reports",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack-dev-server --config webpack.dev.js --open"
@@ -13,9 +13,6 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/muhazizal/Covid-19_Reports/issues"
-  },
   "homepage": "https://github.com/muhazizal/Covid-19_Reports#readme",
   "dependencies": {
     "bootstrap": "^4.4.1",
