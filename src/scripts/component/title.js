@@ -1,4 +1,3 @@
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/reports.svg';
 
 class Title extends HTMLElement {
@@ -33,19 +32,17 @@ class Title extends HTMLElement {
       </style>
 
       <section class="container">
-        <div class="row">
-          <div class="col-lg-6 title-desc">
-            <h1>Coronavirus Global Reports</h1>
-            <p>
-              Here is infected, death, or recovered patients report for coronavirus (COVID-19)
-              that has been recorded from the whole world.
-            </p>
-          </div>
-
-          <figure class="col-lg-6 title-img">
-            <img src="${reportsImg}" alt="Global Reports">
-          </figure>
+        <div class="col-lg-12 title-desc">
+          <h1>Coronavirus Global Reports</h1>
+          <p>
+            Here is infected, death, or recovered patients report for coronavirus (COVID-19)
+            that has been recorded from the whole world.
+          </p>
         </div>
+
+        <figure class="col-lg-12 title-img">
+          <img src="${reportsImg}" alt="Global Reports">
+        </figure>
       </section>
     `
   }

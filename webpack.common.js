@@ -43,7 +43,8 @@ module.exports = {
     }),
     new webpack.ProvidePlugin ({
       $: 'jquery',
-      jQuery: 'jquery'
-    })
+      jQuery: 'jquery',
+      bootstrap: 'bootstrap/dist/css/bootstrap.min.css'
+    }),
   ]
 }

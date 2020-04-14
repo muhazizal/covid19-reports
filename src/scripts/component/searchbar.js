@@ -1,5 +1,3 @@
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
-
 class Searchbar extends HTMLElement {
   constructor() {
     super();
@@ -23,6 +21,9 @@ class Searchbar extends HTMLElement {
     this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
+        .container {
+          width: 90%;
+        }
         .form-inline {
           flex-wrap: nowrap;
         }
@@ -35,6 +36,9 @@ class Searchbar extends HTMLElement {
           padding: 1.45rem 2.5rem;
           font-size: 1.4rem;
           font-weight: 600;
+        }
+        .btn:active {
+          background-color: red;
         }
       </style>
       

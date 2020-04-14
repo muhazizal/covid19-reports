@@ -13,9 +13,14 @@ class CountryList extends HTMLElement {
   }
 
   renderError(message) {
-    this.shadowDOM.innerHTML += `
-      <div class="alert alert-danger" role="alert">
-        <strong>${message}</strong>
+    this.shadowDOM.innerHTML = `
+      <style>
+        ${bootstrap}
+      </style>
+      <div class="container">
+        <div class="alert alert-danger" role="alert">
+          <strong>${message}</strong>
+        </div>
       </div>
     `
   }
