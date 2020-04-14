@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    chunkFilename: 'chunk.bundle.js',
   },
   module: {
     rules: [
@@ -31,7 +32,16 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: 'file-loader?name=/src/assets/[name].[ext]'
+        loader: 'file-loader?name=/assets/[name].[ext]'
+      },
+      {
+        test: /\.bundle\.js$/,
+        use: {
+          loader: 'bundle-loader',
+          options: {
+            name: 'my-chunk'
+          }
+        }
       }
     ]
   },

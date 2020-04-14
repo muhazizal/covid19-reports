@@ -23,7 +23,6 @@ const main = () => {
       .catch(showFallbackMessage);
   }
   
-
   // Search Country
   const searchBar = document.querySelector('searchbar-app');
   const countryList = document.querySelector('country-list');

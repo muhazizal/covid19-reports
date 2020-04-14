@@ -1,4 +1,3 @@
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import './country-item';
 
 class CountryList extends HTMLElement {
@@ -17,6 +16,7 @@ class CountryList extends HTMLElement {
       <style>
         ${bootstrap}
       </style>
+      
       <div class="container">
         <div class="alert alert-danger" role="alert">
           <strong>${message}</strong>
@@ -26,11 +26,7 @@ class CountryList extends HTMLElement {
   }
 
   renderSuccess() {
-    this.shadowDOM.innerHTML = `
-      <style>
-        ${bootstrap}
-      </style>
-    `
+    this.shadowDOM.innerHTML = ``;
     const countryItemElement = document.createElement('country-item');
     countryItemElement.country = this._countries;
     this.shadowDOM.appendChild(countryItemElement);

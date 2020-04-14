@@ -7,12 +7,10 @@ class DataSource {
       .then(responseJson => {
         if (responseJson) {
           return Promise.resolve(responseJson);
-        } else {
-          return Promise.reject('gagal');
         }
       })
       .catch( () => {
-        return Promise.reject('failed');
+        return Promise.reject(console.log('Data Failed to Load'));
       })
   }
   
@@ -29,7 +27,7 @@ class DataSource {
         }
       })
       .catch( () => {
-        return Promise.reject(`${keyword} not found, try again!`);
+        return Promise.reject(`${keyword} not found, please enter correctly`);
       })
   }
 }
