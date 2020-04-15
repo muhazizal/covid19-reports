@@ -5,7 +5,9 @@ import '../../assets/twitter-icon.png';
 class Navbar extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
+    this.shadowDOM = this.attachShadow({
+      mode: 'open'
+    });
   }
 
   connectedCallback() {
@@ -21,7 +23,7 @@ class Navbar extends HTMLElement {
       <style>
         ${bootstrap}
         .container-fluid { border-bottom: 1px solid var(--font-color) }
-
+        
         .navbar {
           padding: 1.5rem 3rem;
         }

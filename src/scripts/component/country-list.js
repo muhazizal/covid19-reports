@@ -3,7 +3,9 @@ import './country-item';
 class CountryList extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
+    this.shadowDOM = this.attachShadow({
+      mode: 'open'
+    });
   }
 
   set countries(countries) {

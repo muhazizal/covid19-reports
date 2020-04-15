@@ -1,7 +1,9 @@
 class GlobalReports extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
+    this.shadowDOM = this.attachShadow({
+      mode: 'open'
+    });
   }
 
   set reports(reports) {
@@ -22,7 +24,7 @@ class GlobalReports extends HTMLElement {
       </div>
     `;
   }
-  
+
   renderSuccess() {
     this.shadowDOM.innerHTML = `
       <style>

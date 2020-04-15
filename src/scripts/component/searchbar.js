@@ -1,7 +1,9 @@
 class Searchbar extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' })
+    this.shadowDOM = this.attachShadow({
+      mode: 'open'
+    })
   }
 
   connectedCallback() {
@@ -49,7 +51,7 @@ class Searchbar extends HTMLElement {
         </form>
       </div>
     `;
-    
+
     this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', (event) => {
       event.preventDefault();
     });

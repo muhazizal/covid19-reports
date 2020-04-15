@@ -9,11 +9,11 @@ class DataSource {
           return Promise.resolve(responseJson);
         }
       })
-      .catch( () => {
+      .catch(() => {
         return Promise.reject(console.log('Data Failed to Load'));
       })
   }
-  
+
   static searchCountry(keyword) {
     return fetch(`https://covid19.mathdro.id/api/countries/${keyword}/confirmed`)
       .then(response => {
@@ -26,7 +26,7 @@ class DataSource {
           }
         }
       })
-      .catch( () => {
+      .catch(() => {
         return Promise.reject(`${keyword} not found, please enter correctly`);
       })
   }

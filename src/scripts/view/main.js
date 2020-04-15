@@ -8,7 +8,7 @@ import DataSource from '../data/data-source.js';
 const main = () => {
   // Global Reports
   const globalReportsElement = document.querySelector('global-reports-app');
-  
+
   const showReports = results => {
     globalReportsElement.reports = results;
   }
@@ -19,10 +19,10 @@ const main = () => {
 
   if (DataSource) {
     DataSource.globalReports()
-      .then(showReports)  
+      .then(showReports)
       .catch(showFallbackMessage);
   }
-  
+
   // Search Country
   const searchBar = document.querySelector('searchbar-app');
   const countryList = document.querySelector('country-list');
