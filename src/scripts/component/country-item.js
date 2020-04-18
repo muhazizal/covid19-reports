@@ -34,6 +34,12 @@ class CountryItem extends HTMLElement {
           letter-spacing: 1px;
         }
 
+        @media (max-width: 430px) {
+          .list-group-horizontal {
+            flex-direction: column;
+          }
+        }
+
         @media (min-width: 768px) {
           .list-group-item { margin: 1rem 1.5rem; }
         }
