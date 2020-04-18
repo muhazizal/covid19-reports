@@ -25,7 +25,7 @@ class Navbar extends HTMLElement {
         .container-fluid { border-bottom: 1px solid var(--font-color) }
         
         .navbar {
-          padding: 1.5rem 3rem;
+          padding: 1.5rem 0rem;
         }
 
         .navbar-brand {
