@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: 'file-loader?name=/assets/[name].[ext]'
+        loader: 'file-loader?name=[name].[ext]'
       },
       {
         test: /\.bundle\.js$/,

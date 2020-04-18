@@ -266,10 +266,10 @@ var Navbar = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "render",
     value: function render() {
-      var github = './dist/assets/github-icon.png';
-      var instagram = './dist/assets/instagram-icon.png';
-      var twitter = './dist/assets/twitter-icon.png';
-      this.shadowDOM.innerHTML = "\n      <style>\n        ".concat(bootstrap, "\n        .container-fluid { border-bottom: 1px solid var(--font-color) }\n\n        .navbar {\n          padding: 1.5rem 3rem;\n        }\n\n        .navbar-brand {\n          color: var(--font-color);\n          font-size: 2.4rem;\n          font-weight: 600;\n        }\n\n        .navbar-brand:hover { color: var(--font-hover-color) }\n\n        img { width: 50%; }\n      </style>\n\n      <section class=\"container-fluid\">\n        <nav class=\"navbar navbar-expand-lg justify-content-center\">\n          <a class=\"navbar-brand mr-auto\" href=\"#\">COVID-19</a>\n          <ul class=\"navbar-nav ml-auto flex-row\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://github.com/muhazizal\" target=\"_blank\">\n                <img src=\"").concat(github, "\" alt=\"Github Creator\" title=\"Github Creator\">\n              </a>\n            </li>\n\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.instagram.com/muhazizal/\" target=\"_blank\">\n                <img src=\"").concat(instagram, "\" alt=\"Instagram Creator\" title=\"Instagram Creator\">\n              </a>\n            </li>\n            \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://twitter.com/muhazizal\" target=\"_blank\">\n                <img src=\"").concat(twitter, "\" alt=\"Twitter Creator\" title=\"Twitter Creator\">\n              </a>\n            </li>\n          </ul>\n        </nav>\n      </section>\n    ");
+      var github = './dist/github-icon.png';
+      var instagram = './dist/instagram-icon.png';
+      var twitter = './dist/twitter-icon.png';
+      this.shadowDOM.innerHTML = "\n      <style>\n        ".concat(bootstrap, "\n        .container-fluid { border-bottom: 1px solid var(--font-color) }\n        \n        .navbar {\n          padding: 1.5rem 3rem;\n        }\n\n        .navbar-brand {\n          color: var(--font-color);\n          font-size: 2.4rem;\n          font-weight: 600;\n        }\n\n        .navbar-brand:hover { color: var(--font-hover-color) }\n\n        img { width: 50%; }\n      </style>\n\n      <section class=\"container-fluid\">\n        <nav class=\"navbar navbar-expand-lg justify-content-center\">\n          <a class=\"navbar-brand mr-auto\" href=\"#\">COVID-19</a>\n          <ul class=\"navbar-nav ml-auto flex-row\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://github.com/muhazizal\" target=\"_blank\">\n                <img src=\"").concat(github, "\" alt=\"Github Creator\" title=\"Github Creator\">\n              </a>\n            </li>\n\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.instagram.com/muhazizal/\" target=\"_blank\">\n                <img src=\"").concat(instagram, "\" alt=\"Instagram Creator\" title=\"Instagram Creator\">\n              </a>\n            </li>\n            \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://twitter.com/muhazizal\" target=\"_blank\">\n                <img src=\"").concat(twitter, "\" alt=\"Twitter Creator\" title=\"Twitter Creator\">\n              </a>\n            </li>\n          </ul>\n        </nav>\n      </section>\n    ");
     }
   }]);
 
@@ -285,21 +285,21 @@ customElements.define('navbar-app', Navbar);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiL2Fzc2V0cy9naXRodWItaWNvbi5wbmciOw==");
+/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiZ2l0aHViLWljb24ucG5nIjs=");
 
 /***/ }),
 /* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiL2Fzc2V0cy9pbnN0YWdyYW0taWNvbi5wbmciOw==");
+/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiaW5zdGFncmFtLWljb24ucG5nIjs=");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiL2Fzc2V0cy90d2l0dGVyLWljb24ucG5nIjs=");
+/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAidHdpdHRlci1pY29uLnBuZyI7");
 
 /***/ }),
 /* 15 */
@@ -362,7 +362,7 @@ var Title = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "render",
     value: function render() {
-      var reportsImg = './dist/assets/reports.svg';
+      var reportsImg = './dist/reports.svg';
       this.shadowDOM.innerHTML = "\n      <style>\n        ".concat(bootstrap, "\n        .container { width: 90%; }\n\n        .title-desc,\n        .title-img {\n          margin-top: 5rem;\n        }\n\n        .title-desc { margin: 5rem auto 0 auto; }\n        .title-desc h1 { font-size: 3.2rem; }\n        .title-desc p { margin: 1.5rem auto 0 auto; }\n        img { width: 60%; }\n\n        @media (min-width: 768px) {\n          .title-desc { width: 80%; }\n          img { max-width: 375px !important; }\n        }\n\n        @media (min-width: 992px) {\n          .container { max-width: 960px; }\n\n          .title-desc {\n            margin: auto auto auto 0;\n            text-align: left;\n          }\n\n          .title-desc h1,\n          .title-desc p {\n            width: 50%;\n            margin: auto;\n          }\n          \n          .title-desc p { margin-top: 1.5rem; }\n        }\n      </style>\n\n      <section class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-xs-12 col-lg-6 title-desc\">\n            <h1>Coronavirus Global Reports</h1>\n            <p>\n              Here is infected, death, or recovered patients report for coronavirus (COVID-19)\n              that has been recorded from the whole world (Up to Date).\n            </p>\n          </div>\n          \n          <figure class=\"col-xs-12 col-lg-6 title-img\">\n            <img src=\"").concat(reportsImg, "\" class=\"img-fluid\" alt=\"Global Reports\">\n          </figure>\n        </div>\n      </section>\n    ");
     }
   }]);
@@ -378,7 +378,7 @@ customElements.define('title-app', Title);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/svg+xml;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiL2Fzc2V0cy9yZXBvcnRzLnN2ZyI7");
+/* unused harmony default export */ var _unused_webpack_default_export = ("data:image/svg+xml;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAicmVwb3J0cy5zdmciOw==");
 
 /***/ }),
 /* 17 */
