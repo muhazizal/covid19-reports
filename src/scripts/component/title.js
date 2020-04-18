@@ -13,7 +13,7 @@ class Title extends HTMLElement {
   }
 
   render() {
-    const reportsImg = './dist/reports.svg';
+    const reportsImg = 'reports.svg';
 
     this.shadowDOM.innerHTML = `
       <style>

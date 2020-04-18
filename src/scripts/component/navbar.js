@@ -15,9 +15,9 @@ class Navbar extends HTMLElement {
   }
 
   render() {
-    const github = './dist/github-icon.png';
-    const instagram = './dist/instagram-icon.png';
-    const twitter = './dist/twitter-icon.png';
+    const github = 'github-icon.png';
+    const instagram = 'instagram-icon.png';
+    const twitter = 'twitter-icon.png';
 
     this.shadowDOM.innerHTML = `
       <style>
