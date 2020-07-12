@@ -1,18 +1,18 @@
 class GlobalReports extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    });
-  }
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  set reports(reports) {
-    this._reports = reports;
-    this.renderSuccess()
-  }
+	set reports(reports) {
+		this._reports = reports;
+		this.renderSuccess();
+	}
 
-  renderError(message) {
-    this.shadowDOM.innerHTML = `
+	renderError(message) {
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
       </style>
@@ -23,10 +23,10 @@ class GlobalReports extends HTMLElement {
         </div>
       </div>
     `;
-  }
+	}
 
-  renderSuccess() {
-    this.shadowDOM.innerHTML = `
+	renderSuccess() {
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container { width: 90%; }
@@ -89,7 +89,7 @@ class GlobalReports extends HTMLElement {
         </div>
       </section>
     `;
-  }
+	}
 }
 
 customElements.define('global-reports-app', GlobalReports);

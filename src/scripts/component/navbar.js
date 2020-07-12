@@ -1,25 +1,23 @@
 import '../../assets/github-icon.png';
-import '../../assets/instagram-icon.png';
-import '../../assets/twitter-icon.png';
+import '../../assets/linkedin-icon.png';
 
 class Navbar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    });
-  }
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  connectedCallback() {
-    this.render();
-  }
+	connectedCallback() {
+		this.render();
+	}
 
-  render() {
-    const github = 'github-icon.png';
-    const instagram = 'instagram-icon.png';
-    const twitter = 'twitter-icon.png';
+	render() {
+		const github = 'github-icon.png';
+		const linkedin = 'linkedin-icon.png';
 
-    this.shadowDOM.innerHTML = `
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container-fluid { border-bottom: 1px solid var(--font-color) }
@@ -39,7 +37,7 @@ class Navbar extends HTMLElement {
         img { width: 50%; }
       </style>
 
-      <section class="container-fluid">
+      <section class="container">
         <nav class="navbar navbar-expand-lg justify-content-center">
           <a class="navbar-brand mr-auto" href="#">COVID-19</a>
           <ul class="navbar-nav ml-auto flex-row">
@@ -50,21 +48,15 @@ class Navbar extends HTMLElement {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="https://www.instagram.com/muhazizal/" target="_blank">
-                <img src="${instagram}" alt="Instagram Creator" title="Instagram Creator">
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="https://twitter.com/muhazizal" target="_blank">
-                <img src="${twitter}" alt="Twitter Creator" title="Twitter Creator">
+              <a class="nav-link" href="https://www.linkedin.com/in/muhammad-aziz-al-assad-a7143218b/" target="_blank">
+                <img src="${linkedin}" alt="Linkedin Creator" title="Linkedin Creator">
               </a>
             </li>
           </ul>
         </nav>
       </section>
     `;
-  }
+	}
 }
 
 customElements.define('navbar-app', Navbar);
