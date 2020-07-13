@@ -4,19 +4,23 @@ import '../../assets/linkedin-icon.png';
 class Navbar extends HTMLElement {
 	constructor() {
 		super();
+		// Attach shadow dom
 		this.shadowDOM = this.attachShadow({
 			mode: 'open',
 		});
 	}
 
+	// If connected
 	connectedCallback() {
 		this.render();
 	}
 
+	// Render html element
 	render() {
 		const github = 'github-icon.png';
 		const linkedin = 'linkedin-icon.png';
 
+		// Insert shadowDOM HTML
 		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}

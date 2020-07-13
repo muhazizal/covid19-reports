@@ -1,16 +1,21 @@
+import ConvertValue from '../data/convertValue.js';
+
 class GlobalReports extends HTMLElement {
 	constructor() {
 		super();
+		// Attach shadow dom
 		this.shadowDOM = this.attachShadow({
 			mode: 'open',
 		});
 	}
 
+	// Set reports data
 	set reports(reports) {
 		this._reports = reports;
 		this.renderSuccess();
 	}
 
+	// Render error message on error
 	renderError(message) {
 		this.shadowDOM.innerHTML = `
       <style>
@@ -25,7 +30,24 @@ class GlobalReports extends HTMLElement {
     `;
 	}
 
+	// Render component if success
 	renderSuccess() {
+		// Convert confirmed string
+		let confirmed = this._reports.confirmed.value.toString();
+		let confirmedLength = confirmed.length;
+		let confirmedConverted = ConvertValue.convertValue(confirmed, confirmedLength, 0, '.');
+
+		// Convert recovered string
+		let recovered = this._reports.recovered.value.toString();
+		let recoveredLength = recovered.length;
+		let recoveredConverted = ConvertValue.convertValue(recovered, recoveredLength, 0, '.');
+
+		// Convert deaths string
+		let deaths = this._reports.deaths.value.toString();
+		let deathsLength = deaths.length;
+		let deathsConverted = ConvertValue.convertValue(deaths, deathsLength, 0, '.');
+
+		// Insert shadowDOM HTML
 		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
@@ -64,7 +86,7 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-warning text-white">
               <div class="card-body">
                 <h2>Confirmed</h2>
-                <p>${this._reports.confirmed.value}</p>
+                <p>${confirmedConverted}</p>
               </div>
             </div>
           </div>
@@ -73,7 +95,7 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-success text-white">
               <div class="card-body">
                 <h2>Recovered</h2>
-                <p>${this._reports.recovered.value}</p>
+                <p>${recoveredConverted}</p>
               </div>
             </div>
           </div>
@@ -82,7 +104,7 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-danger text-white">
               <div class="card-body">
                 <h2>Deaths</h2>
-                <p>${this._reports.deaths.value}</p>
+                <p>${deathsConverted}</p>
               </div>
             </div>
           </div>

@@ -1,18 +1,38 @@
+import ConvertValue from '../data/convertValue.js';
+
 class CountryItem extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    });
-  }
+	constructor() {
+		super();
+		// Attach shadow dom
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  set country(country) {
-    this._country = country;
-    this.render();
-  }
+	// Set country data
+	set country(country) {
+		this._country = country;
+		this.render();
+	}
 
-  render() {
-    this.shadowDOM.innerHTML = `
+	render() {
+		// Convert confirmed string
+		let confirmed = this._country.confirmed.toString();
+		let confirmedLength = confirmed.length;
+		let confirmedConverted = ConvertValue.convertValue(confirmed, confirmedLength, 0, '.');
+
+		// Convert recovered string
+		let recovered = this._country.recovered.toString();
+		let recoveredLength = recovered.length;
+		let recoveredConverted = ConvertValue.convertValue(recovered, recoveredLength, 0, '.');
+
+		// Convert deaths string
+		let deaths = this._country.deaths.toString();
+		let deathsLength = deaths.length;
+		let deathsConverted = ConvertValue.convertValue(deaths, deathsLength, 0, '.');
+
+		// Insert shadowDOM HTML
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container {
@@ -61,9 +81,9 @@ class CountryItem extends HTMLElement {
               <div class="card-header">${this._country.countryRegion}</div>
               <div class="card-body">
                 <ul class="list-group list-group-horizontal text-center text-white justify-content-center">
-                  <li class="list-group-item bg-warning">Confirmed ${this._country.confirmed}</li>
-                  <li class="list-group-item bg-success">Recovered ${this._country.recovered}</li>
-                  <li class="list-group-item bg-danger">Deaths ${this._country.deaths}</li>
+                  <li class="list-group-item bg-warning">Confirmed ${confirmedConverted}</li>
+                  <li class="list-group-item bg-success">Recovered ${recoveredConverted}</li>
+                  <li class="list-group-item bg-danger">Deaths ${deathsConverted}</li>
                 </ul>
               </div>
             </div>
@@ -71,7 +91,7 @@ class CountryItem extends HTMLElement {
         </div>
       </section>
     `;
-  }
+	}
 }
 
 customElements.define('country-item', CountryItem);

@@ -1,20 +1,23 @@
 import './country-item';
 
 class CountryList extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    });
-  }
+	constructor() {
+		super();
+		// Attach shadow dom
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  set countries(countries) {
-    this._countries = countries;
-    this.renderSuccess();
-  }
+	// Set countries data
+	set countries(countries) {
+		this._countries = countries;
+		this.renderSuccess();
+	}
 
-  renderError(message) {
-    this.shadowDOM.innerHTML = `
+	// Render message on error
+	renderError(message) {
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
       </style>
@@ -24,15 +27,16 @@ class CountryList extends HTMLElement {
           <strong>${message}</strong>
         </div>
       </div>
-    `
-  }
+    `;
+	}
 
-  renderSuccess() {
-    this.shadowDOM.innerHTML = ``;
-    const countryItemElement = document.createElement('country-item');
-    countryItemElement.country = this._countries;
-    this.shadowDOM.appendChild(countryItemElement);
-  }
+	// Render country list
+	renderSuccess() {
+		this.shadowDOM.innerHTML = ``;
+		const countryItemElement = document.createElement('country-item');
+		countryItemElement.country = this._countries;
+		this.shadowDOM.appendChild(countryItemElement);
+	}
 }
 
 customElements.define('country-list', CountryList);

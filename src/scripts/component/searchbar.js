@@ -1,26 +1,31 @@
 class Searchbar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    })
-  }
+	constructor() {
+		super();
+		// Attach shadow dom
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  connectedCallback() {
-    this.render();
-  }
+	// If connected
+	connectedCallback() {
+		this.render();
+	}
 
-  set clickEvent(event) {
-    this._clickEvent = event;
-    this.render();
-  }
+	// Set click event
+	set clickEvent(event) {
+		this._clickEvent = event;
+		this.render();
+	}
 
-  get value() {
-    return this.shadowDOM.querySelector('#searchElement').value;
-  }
+	// Get value from search element
+	get value() {
+		return this.shadowDOM.querySelector('#searchElement').value;
+	}
 
-  render() {
-    this.shadowDOM.innerHTML = `
+	// Render html element
+	render() {
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container { width: 90%; }
@@ -52,11 +57,13 @@ class Searchbar extends HTMLElement {
       </div>
     `;
 
-    this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', (event) => {
-      event.preventDefault();
-    });
-    this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', this._clickEvent);
-  }
+		// Prevent default event listener on click
+		this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', event => {
+			event.preventDefault();
+		});
+		// Add event listener search component button on click
+		this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', this._clickEvent);
+	}
 }
 
 customElements.define('searchbar-app', Searchbar);

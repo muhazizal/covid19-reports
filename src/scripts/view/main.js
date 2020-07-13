@@ -6,42 +6,45 @@ import '../component/country-list.js';
 import DataSource from '../data/data-source.js';
 
 const main = () => {
-  // Global Reports
-  const globalReportsElement = document.querySelector('global-reports-app');
+	// Global reports element
+	const globalReportsElement = document.querySelector('global-reports-app');
 
-  const showReports = results => {
-    globalReportsElement.reports = results;
-  }
+	// Set reports value
+	const showReports = results => {
+		globalReportsElement.reports = results;
+	};
 
-  const showFallbackMessage = message => {
-    globalReportsElement.renderError(message);
-  }
+	// Set fallback message on error
+	const showFallbackMessage = message => {
+		globalReportsElement.renderError(message);
+	};
 
-  if (DataSource) {
-    DataSource.globalReports()
-      .then(showReports)
-      .catch(showFallbackMessage);
-  }
+	// If data source avail, then show reports, or catch fallback
+	if (DataSource) {
+		DataSource.globalReports().then(showReports).catch(showFallbackMessage);
+	}
 
-  // Search Country
-  const searchBar = document.querySelector('searchbar-app');
-  const countryList = document.querySelector('country-list');
+	// Search country element
+	const searchBar = document.querySelector('searchbar-app');
+	const countryList = document.querySelector('country-list');
 
-  const searchSuccess = (results) => {
-    countryList.countries = results;
-  }
+	// Set search result on success
+	const searchSuccess = results => {
+		countryList.countries = results;
+	};
 
-  const searchFailed = (message) => {
-    countryList.renderError(message);
-  }
+	// Set search result on failed
+	const searchFailed = message => {
+		countryList.renderError(message);
+	};
 
-  const btnSearchClicked = () => {
-    DataSource.searchCountry(searchBar.value)
-      .then(searchSuccess)
-      .catch(searchFailed);
-  }
+	// Set search button value when clicked
+	const btnSearchClicked = () => {
+		DataSource.searchCountry(searchBar.value).then(searchSuccess).catch(searchFailed);
+	};
 
-  searchBar.clickEvent = btnSearchClicked;
-}
+	// Set click event value
+	searchBar.clickEvent = btnSearchClicked;
+};
 
 export default main;
