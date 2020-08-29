@@ -22,10 +22,10 @@ class Title extends HTMLElement {
 
         .title-desc,
         .title-img {
-          margin-top: 2.5rem;
+          margin-top: 3rem;
         }
 
-        .title-desc { margin: 2.5rem auto 0 auto; }
+        .title-desc { margin: 3rem auto 0 auto; }
         .title-desc h1 { font-size: 3.2rem; }
         .title-desc p { margin: 1.5rem auto 0 auto; }
         img { width: 60%; }
