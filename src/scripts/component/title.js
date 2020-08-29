@@ -1,38 +1,47 @@
 import '../../assets/reports.svg';
 
 class Title extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({
-      mode: 'open'
-    })
-  }
+	constructor() {
+		super();
+		this.shadowDOM = this.attachShadow({
+			mode: 'open',
+		});
+	}
 
-  connectedCallback() {
-    this.render();
-  }
+	connectedCallback() {
+		this.render();
+	}
 
-  render() {
-    const reportsImg = 'reports.svg';
+	render() {
+		const reportsImg = 'reports.svg';
 
-    this.shadowDOM.innerHTML = `
+		this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container { width: 90%; }
 
         .title-desc,
         .title-img {
-          margin-top: 5rem;
+          margin-top: 2.5rem;
         }
 
-        .title-desc { margin: 5rem auto 0 auto; }
+        .title-desc { margin: 2.5rem auto 0 auto; }
         .title-desc h1 { font-size: 3.2rem; }
         .title-desc p { margin: 1.5rem auto 0 auto; }
         img { width: 60%; }
 
-        @media (min-width: 768px) {
+        @media screen and (max-width: 320px) {
+          img { width: 65%; }
+        }
+
+        @media screen and (max-width: 768px) {
+          .img-fluid {
+            max-width: 275px;
+          }
+        }
+
+        @media screen and (min-width: 769px) {
           .title-desc { width: 80%; }
-          img { max-width: 375px !important; }
         }
 
         @media (min-width: 992px) {
@@ -45,8 +54,8 @@ class Title extends HTMLElement {
 
           .title-desc h1,
           .title-desc p {
-            width: 50%;
-            margin: auto;
+            width: 90%;
+            margin-left: 11.5rem
           }
           
           .title-desc p { margin-top: 1.5rem; }
@@ -69,7 +78,7 @@ class Title extends HTMLElement {
         </div>
       </section>
     `;
-  }
+	}
 }
 
 customElements.define('title-app', Title);

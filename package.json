@@ -5,13 +5,13 @@
 	"main": "app.js",
 	"scripts": {
 		"build": "webpack --config webpack.prod.js",
-		"start-dev": "webpack-dev-server --config webpack.dev.js --open"
+		"dev": "webpack-dev-server --config webpack.dev.js --open"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/muhazizal/covid19-reports.git"
 	},
-	"author": "",
+	"author": "muhazizal <muhazizal.26@gmail.com>",
 	"license": "ISC",
 	"homepage": "https://github.com/muhazizal/covid19-reports#readme",
 	"dependencies": {

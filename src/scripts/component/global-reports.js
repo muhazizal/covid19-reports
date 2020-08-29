@@ -54,7 +54,7 @@ class GlobalReports extends HTMLElement {
         .container { width: 90%; }
 
         .card {
-          width: 12.5rem;
+          width: 16rem;
           margin: 1rem;
           font-size: 2rem;
         }
@@ -85,7 +85,7 @@ class GlobalReports extends HTMLElement {
           <div class="col-xs-4">
             <div class="card bg-warning text-white">
               <div class="card-body">
-                <h2>Confirmed</h2>
+                <h2>Confirmed &#128532</h2>
                 <p>${confirmedConverted}</p>
               </div>
             </div>
@@ -94,7 +94,7 @@ class GlobalReports extends HTMLElement {
           <div class="col-xs-4">
             <div class="card bg-success text-white">
               <div class="card-body">
-                <h2>Recovered</h2>
+                <h2>Recovered &#128522</h2>
                 <p>${recoveredConverted}</p>
               </div>
             </div>
@@ -103,7 +103,7 @@ class GlobalReports extends HTMLElement {
           <div class="col-xs-4">
             <div class="card bg-danger text-white">
               <div class="card-body">
-                <h2>Deaths</h2>
+                <h2>Deaths &#128549</h2>
                 <p>${deathsConverted}</p>
               </div>
             </div>
