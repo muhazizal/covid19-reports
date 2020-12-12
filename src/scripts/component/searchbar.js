@@ -58,7 +58,7 @@ class Searchbar extends HTMLElement {
     `;
 
 		// Prevent default event listener on click
-		this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', event => {
+		this.shadowDOM.querySelector('#searchBtnElement').addEventListener('click', (event) => {
 			event.preventDefault();
 		});
 		// Add event listener search component button on click

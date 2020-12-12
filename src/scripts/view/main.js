@@ -10,12 +10,12 @@ const main = () => {
 	const globalReportsElement = document.querySelector('global-reports-app');
 
 	// Set reports value
-	const showReports = results => {
+	const showReports = (results) => {
 		globalReportsElement.reports = results;
 	};
 
 	// Set fallback message on error
-	const showFallbackMessage = message => {
+	const showFallbackMessage = (message) => {
 		globalReportsElement.renderError(message);
 	};
 
@@ -29,12 +29,18 @@ const main = () => {
 	const countryList = document.querySelector('country-list');
 
 	// Set search result on success
-	const searchSuccess = results => {
+	const searchSuccess = (results) => {
 		countryList.countries = results;
+		const countryItem = countryList.shadowRoot.querySelector('country-item');
+		const countryName = countryItem.shadowRoot.querySelector('.card-header');
+
+		countryName.scrollIntoView({
+			behavior: 'smooth',
+		});
 	};
 
 	// Set search result on failed
-	const searchFailed = message => {
+	const searchFailed = (message) => {
 		countryList.renderError(message);
 	};
 
