@@ -5,6 +5,8 @@ import '../component/searchbar.js';
 import '../component/country-list.js';
 import DataSource from '../data/data-source.js';
 
+// Test
+
 const main = () => {
 	// Global reports element
 	const globalReportsElement = document.querySelector('global-reports-app');
