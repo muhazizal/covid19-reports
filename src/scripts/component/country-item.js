@@ -1,38 +1,48 @@
-import ConvertValue from '../data/convertValue.js';
+import ConvertValue from '../data/convertValue.js'
 
 class CountryItem extends HTMLElement {
-	constructor() {
-		super();
-		// Attach shadow dom
-		this.shadowDOM = this.attachShadow({
-			mode: 'open',
-		});
-	}
+  constructor() {
+    super()
+    // Attach shadow dom
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-	// Set country data
-	set country(country) {
-		this._country = country;
-		this.render();
-	}
+  // Set country data
+  set country(country) {
+    this._country = country
+    this.render()
+  }
 
-	render() {
-		// Convert confirmed string
-		let confirmed = this._country.confirmed.toString();
-		let confirmedLength = confirmed.length;
-		let confirmedConverted = ConvertValue.convertValue(confirmed, confirmedLength, 0, '.');
+  render() {
+    let confirmedConverted = ''
+    let recoveredConverted = ''
+    let deathsConverted = ''
 
-		// Convert recovered string
-		let recovered = this._country.recovered.toString();
-		let recoveredLength = recovered.length;
-		let recoveredConverted = ConvertValue.convertValue(recovered, recoveredLength, 0, '.');
+    // Convert confirmed string
+    if (this._country.confirmed) {
+      let confirmed = this._country.confirmed.toString()
+      let confirmedLength = confirmed.length
+      confirmedConverted = ConvertValue.convertValue(confirmed, confirmedLength, 0, '.')
+    }
 
-		// Convert deaths string
-		let deaths = this._country.deaths.toString();
-		let deathsLength = deaths.length;
-		let deathsConverted = ConvertValue.convertValue(deaths, deathsLength, 0, '.');
+    // Convert recovered string
+    if (this._country.recovered) {
+      let recovered = this._country.recovered.toString()
+      let recoveredLength = recovered.length
+      recoveredConverted = ConvertValue.convertValue(recovered, recoveredLength, 0, '.')
+    }
 
-		// Insert shadowDOM HTML
-		this.shadowDOM.innerHTML = `
+    // Convert deaths string
+    if (this._country.deaths) {
+      let deaths = this._country.deaths.toString()
+      let deathsLength = deaths.length
+      deathsConverted = ConvertValue.convertValue(deaths, deathsLength, 0, '.')
+    }
+
+    // Insert shadowDOM HTML
+    this.shadowDOM.innerHTML = `
       <style>
         ${bootstrap}
         .container {
@@ -90,8 +100,8 @@ class CountryItem extends HTMLElement {
           </div>
         </div>
       </section>
-    `;
-	}
+    `
+  }
 }
 
-customElements.define('country-item', CountryItem);
+customElements.define('country-item', CountryItem)
