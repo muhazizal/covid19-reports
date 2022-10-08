@@ -1,18 +1,18 @@
-import ConvertValue from '../data/convertValue.js';
+import ConvertValue from '../data/convertValue.js'
 
 class GlobalReports extends HTMLElement {
 	constructor() {
-		super();
+		super()
 		// Attach shadow dom
 		this.shadowDOM = this.attachShadow({
 			mode: 'open',
-		});
+		})
 	}
 
 	// Set reports data
 	set reports(reports) {
-		this._reports = reports;
-		this.renderSuccess();
+		this._reports = reports
+		this.renderSuccess()
 	}
 
 	// Render error message on error
@@ -27,26 +27,11 @@ class GlobalReports extends HTMLElement {
           <strong>${message}</strong>
         </div>
       </div>
-    `;
+    `
 	}
 
 	// Render component if success
 	renderSuccess() {
-		// Convert confirmed string
-		let confirmed = this._reports.confirmed.value.toString();
-		let confirmedLength = confirmed.length;
-		let confirmedConverted = ConvertValue.convertValue(confirmed, confirmedLength, 0, '.');
-
-		// Convert recovered string
-		let recovered = this._reports.recovered.value.toString();
-		let recoveredLength = recovered.length;
-		let recoveredConverted = ConvertValue.convertValue(recovered, recoveredLength, 0, '.');
-
-		// Convert deaths string
-		let deaths = this._reports.deaths.value.toString();
-		let deathsLength = deaths.length;
-		let deathsConverted = ConvertValue.convertValue(deaths, deathsLength, 0, '.');
-
 		// Insert shadowDOM HTML
 		this.shadowDOM.innerHTML = `
       <style>
@@ -86,7 +71,9 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-warning text-white">
               <div class="card-body">
                 <h2>Confirmed &#128532</h2>
-                <p>${confirmedConverted}</p>
+                <p>${ConvertValue.convertValue(
+									this._reports.confirmed.value
+								)}</p>
               </div>
             </div>
           </div>
@@ -95,7 +82,9 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-success text-white">
               <div class="card-body">
                 <h2>Recovered &#128522</h2>
-                <p>${recoveredConverted}</p>
+                <p>${ConvertValue.convertValue(
+									this._reports.recovered.value
+								)}</p>
               </div>
             </div>
           </div>
@@ -104,14 +93,14 @@ class GlobalReports extends HTMLElement {
             <div class="card bg-danger text-white">
               <div class="card-body">
                 <h2>Deaths &#128549</h2>
-                <p>${deathsConverted}</p>
+                <p>${ConvertValue.convertValue(this._reports.deaths.value)}</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-    `;
+    `
 	}
 }
 
-customElements.define('global-reports-app', GlobalReports);
+customElements.define('global-reports-app', GlobalReports)
